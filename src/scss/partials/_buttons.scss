@@ -1,0 +1,89 @@
+// ESTILOS
+.estilos_botones {
+    @extend  .fuente_gt_america_medium;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    line-height: 1.2em;
+    border: 0;
+    @media ( min-width: 992px  ) { padding: 1.5rem 4rem;  font-size: 1.2rem; }
+    @media ( min-width: 1200px  ) {  font-size: 1.3rem; }
+    span { display: inline-block; }
+}
+
+// BOTONES
+.btn, .vc_btn3 {
+    @extend  .estilos_botones;
+    color: $color_white !important;
+    background: $color_rojizo !important;
+    border-radius: 100px;
+    border: 2px solid $color_white;
+    transition: all .3s;
+    &:hover { background: $color_white !important; color: $color_rojizo !important; }
+    path { fill: $color_white !important; }
+}
+
+.btn_white {
+    background: transparent !important;
+    border: 2px solid $color_white;
+    &:hover {
+        background: transparent !important;
+        color: $color_rojizo !important;
+        border: 2px solid $color_rojizo;
+    }
+}
+
+// BOTON ARROW
+.btn__arrow {
+    position: relative;
+    padding-right: 7.2rem !important;
+    .button_modal_gallery__icon {
+        width: 19px;
+        height: 10px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translate(-50%);
+        overflow: hidden;
+        &:before {
+            content: '';
+            display: block;
+            height: 10px;
+            width: 19px;
+            background: url(../img/arrow_btn.svg);
+            position:absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%);
+        }
+    }
+    svg {
+        position: absolute;
+        right: 2.5rem;
+        top: 50%;
+        width: 19px;
+        transform: translate(-50%);
+        transition: all .3s;
+    }
+    &:hover{
+        padding-right: 10rem !important;
+        .button_modal_gallery__icon:before {
+            animation-name: view_button;
+            animation-duration: .8s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+        }
+        svg {
+            width: 0 !important;
+            height: 10px !important;
+        }
+    }
+}
+
+@keyframes view_button {
+    0% { left: 0; }
+    50% { left: 150%; }
+    51% { left: unset; right: 100%; }
+    80% { right: 25%; }
+    100% { right: 0; }
+}

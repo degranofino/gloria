@@ -1,0 +1,48 @@
+.skills .section_wrap {
+
+    padding: 7rem 3rem 4rem;
+    @media ( min-width: 768px  ) { padding: 10rem 4rem 6rem; }
+    @media ( min-width: 1200px  ) { padding: 15rem 6rem 10rem; }
+    @media ( min-width: 1200px  ) { padding: 18rem 6rem 12rem; }
+    @media ( min-width: 1800px  ) { padding: 22rem 0 17rem; }
+
+}
+
+.skills__item {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+        flex-basis: 50%;
+        text-align: center;
+        margin-bottom: 3rem;
+        @media ( min-width: 768px ) { flex-basis: 25%; margin-bottom: 6rem; }
+        @media ( min-width: 1200px ) { flex-basis: 14%; margin-bottom: 10rem;  }
+
+        p {
+            @extend  .fuente_canela__thin;
+            font-size: 2rem !important;
+            line-height: 1.2em !important;
+            transition: all .3s .1s;
+            transform: translate(20px);
+            opacity: 0;
+        }
+
+        svg {
+            margin-bottom: 20px;
+            height: 70px;
+            transition: all .3s;
+            transform: translate(-20px);
+            opacity: 0;
+        }
+
+        &.animation {
+            p, svg { opacity: 1; transform: translate(0);  }
+        }
+    }
+
+}
+
+// tabs icons

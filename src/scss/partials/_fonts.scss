@@ -1,0 +1,60 @@
+// Font Face
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../font/Canela-Thin.woff2') format('woff2'),
+        url('../font/Canela-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../font/Canela-ThinItalic.woff2') format('woff2'),
+        url('../font/Canela-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('../font/GTAmerica-Light.woff2') format('woff2'),
+        url('../font/GTAmerica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('../font/GTAmerica-Medium.woff2') format('woff2'),
+        url('../font/GTAmerica-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+// Font config
+
+$fuente_canela: 'Canela', sans-serif;
+$fuente_gt_america: 'GT America', sans-serif;
+
+.fuente_canela__thin {
+    font-family: $fuente_canela !important;
+    font-weight: 100 !important;
+}
+
+.fuente_canela__thin__it {
+    font-family: $fuente_canela !important;
+    font-weight: 100 !important;
+    font-style: italic;
+}
+
+.fuente_gt_america {
+    font-family: $fuente_gt_america !important;
+    font-weight: 300 !important;
+}
+
+.fuente_gt_america_medium {
+    font-family: $fuente_gt_america !important;
+    font-weight: 500 !important;
+}
