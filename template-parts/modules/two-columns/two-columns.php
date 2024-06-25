@@ -24,7 +24,6 @@
 				</div>
 
 				<div class="col-lg-5 offset-lg-2">
-
 					<div class="normal__animation">
 						<div class="intro__slogan"><?php echo $content['pre-content']; ?></div>
 						<a href="#" data-toggle="modal" data-target="#modalGallery" class="btn btn_white mb-5 d-lg-none">VER GALERÍA</a>
