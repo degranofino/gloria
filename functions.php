@@ -1,4 +1,5 @@
 <?php
+
 /* @Recreate the default filters on the_content so we can pull formated content with get_post_meta
 -------------------------------------------------------------- */
 add_filter( 'meta_content', 'wptexturize'       );
@@ -32,12 +33,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 /*----------------------------------*/
-/*----------- INCLUDE PHP ----------*/
-/*----------------------------------*/
-//require_once('php/modal_gallery.php');
-//require_once('php/shortcodes.php');
-
-/*----------------------------------*/
 /*------ INCLUDE VC_ELEMENTS -------*/
 /*----------------------------------*/
 add_action( 'vc_before_init', 'vc_before_init_actions' );
@@ -65,16 +60,18 @@ add_image_size( 'proyecto_grid', 960, 960 );
 add_action( 'wp_enqueue_scripts', 'styles_theme' );
 
 function styles_theme() {
+
   wp_register_style( 'styles_theme1', get_template_directory_uri() .'/library/bootstrap/css/bootstrap.css');
   wp_register_style( 'styles_theme2', get_template_directory_uri() .'/library/owl_carousel/assets/owl.carousel.min.css' );
-  // wp_register_style( 'styles_theme3', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' );
-  wp_register_style( 'styles_theme4', get_template_directory_uri() .'/css/style.css');
-  // wp_register_style( 'styles_theme4', get_template_directory_uri() .'/library/lightgallery/css/lightgallery.min.css' );
+  wp_register_style( 'styles_theme3', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' );
+  wp_register_style( 'styles_theme4', get_template_directory_uri() .'/library/lightgallery_2/css/lightgallery.css' );
+  wp_register_style( 'styles_theme5', get_template_directory_uri() .'/css/style.css');
 
   wp_enqueue_style( 'styles_theme1' );
   wp_enqueue_style( 'styles_theme2' );
-  // wp_enqueue_style( 'styles_theme3' );
+  wp_enqueue_style( 'styles_theme3' );
   wp_enqueue_style( 'styles_theme4' );
+  wp_enqueue_style( 'styles_theme5' );
 
 }
 
@@ -91,17 +88,17 @@ function scripts_theme() {
 	// LIBRERAS
 	wp_register_script('scripts_theme2', get_template_directory_uri() . '/library/bootstrap/js/bootstrap.min.js' );
 	wp_register_script('scripts_theme3', get_template_directory_uri() . '/library/owl_carousel/owl.carousel.min.js' );
-	wp_register_script('scripts_theme4', get_template_directory_uri() . '/js/jquery.waypoints.min.js' );
-	wp_register_script('scripts_theme5', get_template_directory_uri() . '/js/classie.js' );
+  wp_register_script('scripts_theme4', get_template_directory_uri() . '/library/lightgallery_2/lightgallery.min.js' );
+	wp_register_script('scripts_theme5', get_template_directory_uri() . '/js/jquery.waypoints.min.js' );
+	wp_register_script('scripts_theme6', get_template_directory_uri() . '/js/classie.js' );
 
-  wp_register_script('scripts_theme6', get_template_directory_uri() . '/library/scrollmagic/gsap3/gsap.min.js' );
-  wp_register_script('scripts_theme7', get_template_directory_uri() . '/library/scrollmagic/uncompressed/ScrollMagic.js' );
-  wp_register_script('scripts_theme8', get_template_directory_uri() . '/library/scrollmagic/uncompressed/plugins/animation.gsap.js' );
-  wp_register_script('scripts_theme9', get_template_directory_uri() . '/library/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
-  wp_register_script('scripts_theme10', get_template_directory_uri() . '/library/scrollmagic/iscroll-probe.js' );
+  wp_register_script('scripts_theme7', get_template_directory_uri() . '/library/scrollmagic/gsap3/gsap.min.js' );
+  wp_register_script('scripts_theme8', get_template_directory_uri() . '/library/scrollmagic/uncompressed/ScrollMagic.js' );
+  wp_register_script('scripts_theme9', get_template_directory_uri() . '/library/scrollmagic/uncompressed/plugins/animation.gsap.js' );
+  wp_register_script('scripts_theme10', get_template_directory_uri() . '/library/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
+  // wp_register_script('scripts_theme10', get_template_directory_uri() . '/library/scrollmagic/iscroll-probe.js' );
   // wp_register_script('scripts_theme11', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js' );
   // wp_register_script('scripts_theme10', get_template_directory_uri() . '/js/backgroundVideo.js' );
-
 
 	// MAIN
 	wp_register_script('scripts_theme12', get_template_directory_uri() . '/js/main.js' );
@@ -171,8 +168,8 @@ function slugify($string) {
 /*----------------------------------*/
 /*---------- SLUG STRING -----------*/
 /*----------------------------------*/
-// add_filter('wpcf7_form_elements', function($content) {
-//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-//     $content = str_replace('<br />', '', $content);
-//     return $content;
-// });
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    $content = str_replace('<br />', '', $content);
+    return $content;
+});

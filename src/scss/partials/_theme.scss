@@ -1,0 +1,19 @@
+
+
+.theme-dark {
+    * {
+        color: $color-primary;
+    }
+    .module__section:before {
+        background-color: $color-primary;
+    }
+}
+
+.theme-light {
+    * {
+        color: $color-secondary;
+    }
+    .module__section:before {
+        background-color: $color-secondary;
+    }
+}

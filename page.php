@@ -20,14 +20,14 @@ $contacto = get_field('contacto');
 	<!-- CARRUSEL FONDO -->
 	<div class="carrusel_scroll">
 		<div class="c-text">scroll</div>
-		<div class="c-scrolldown">			
+		<div class="c-scrolldown">
 		    <div class="c-line"></div>
 		 </div>
 	</div>
 
 	<!-- CARRUSEL TITULO -->
 	<div class="carrusel__title animated_letters">
-		<?php echo $cabecera; ?>			
+		<?php echo $cabecera; ?>
 	</div>
 
 	<!-- CARRUSEL NAVIGATION -->
@@ -35,18 +35,18 @@ $contacto = get_field('contacto');
 		<div class="carrusel__navigation__bar">
 			<div class="carrusel__navigation__bar_number carrusel__navigation__bar__current">
 				<div class="current_0">00</div>
-				<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) { 
+				<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) {
 					if($n == 1): $active = 'active'; else: $active = ''; endif; ?>
 					<div class="current_item current_<?php echo $n; ?> <?php echo $active; ?>">0<?php echo $n; ?></div>
 				<?php $n++; }  ?>
-			</div>			
+			</div>
 			<div class="carrusel__navigation__bar_progress">
 				<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) { ?>
 					<div class="carrusel__navigation__bar_progress_item" data-position="<?php echo $n; ?>"></div>
 				<?php $n++; }  ?>
 			</div>
 			<div class="carrusel__navigation__bar_number carrusel__navigation__bar__total">
-				0<?php echo count($carrusel['imagenes']); ?>					
+				0<?php echo count($carrusel['imagenes']); ?>
 			</div>
 		</div>
 	</div>
@@ -66,7 +66,7 @@ $contacto = get_field('contacto');
 <!-- INTRO -->
 <div class="section intro">
 	<div class="section_wrap">
-		<div class="container-fluid">		
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-5">
 					<!-- ANIMATION HEAD > number, section y title -->
@@ -74,11 +74,11 @@ $contacto = get_field('contacto');
 						<div class="animated_head__content">
 							<div class="animated_head__content__top">
 								<div class="animated_head__section"><span><?php echo $intro['section']; ?></span></div>
-							</div>								
+							</div>
 							<div class="animated_head__title animated_letters"><?php echo $intro['titulo']; ?></div>
 							<a href="#" data-toggle="modal" data-target="#modalGallery" class="btn btn_white mt-4 d-none d-lg-inline-block">VER GALERÍA</a>
 						</div>
-						
+
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-2">
@@ -87,15 +87,15 @@ $contacto = get_field('contacto');
 						<a href="#" data-toggle="modal" data-target="#modalGallery" class="btn btn_white mb-5 d-lg-none">VER GALERÍA</a>
 						<?php foreach ($intro['contenido'] as $contenido) { ?>
 							<div class="mb-4"><?php echo $contenido['contenido_texto']; ?></div>
-						<?php }  ?>	
-					</div>							
+						<?php }  ?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="banner">	
+<div class="banner">
 
 	<div class="banner__bg">
 		<div class="banner_bg__fondo">
@@ -116,7 +116,7 @@ $contacto = get_field('contacto');
 <!-- MAPA -->
 <div class="section skills">
 	<div class="section_wrap">
-		<div class="container-fluid">		
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="skills__item">
@@ -125,7 +125,7 @@ $contacto = get_field('contacto');
 								<img src="<?php echo $item['imagen']; ?>" alt="">
 								<?php echo $item['titulo']; ?>
 							</li>
-						<?php }  ?>					
+						<?php }  ?>
 					</ul>
 				</div>
 			</div>
@@ -136,7 +136,7 @@ $contacto = get_field('contacto');
 <div class="mapa" id="map">
     <?php if( have_rows('markers') ): ?>
     <div class="acf-map" data-zoom = "16">
-        <?php while ( have_rows('markers') ) : the_row(); 
+        <?php while ( have_rows('markers') ) : the_row();
 
             // Load sub field values.
             $localizacion = get_sub_field('localizacion');
@@ -144,13 +144,13 @@ $contacto = get_field('contacto');
             $direccion = get_sub_field('direccion');
             $minutos = get_sub_field('minutos'); ?>
 
-            <?php if($tipo == 'main'): ?> 
+            <?php if($tipo == 'main'): ?>
 	            <div class="marker marker-fixed" data-type="fixed" data-marker-image="<?php bloginfo( 'template_url' ); ?>/img/marker_queens.png" data-marker-image-hover="<?php bloginfo( 'template_url' ); ?>/img/marker_queens.png" data-lat="<?php echo $localizacion['lat']; ?>" data-lng="<?php echo $localizacion['lng']; ?>"></div>
             <?php else: ?>
             	<div class="marker" data-type="" data-marker-image="<?php bloginfo( 'template_url' ); ?>/img/marker_normal.png" data-marker-image-hover="<?php bloginfo( 'template_url' ); ?>/img/marker_normal.png" data-lat="<?php echo $localizacion['lat'];?>" data-lng="<?php echo $localizacion['lng'];?>">
 	   				<div class="marker-content">
 	                  <div class="market-title">
-	                  	<?php echo $direccion; ?>	                  		
+	                  	<?php echo $direccion; ?>
 	                  </div>
 	                  <div class="distance">
 						<span>
@@ -159,7 +159,7 @@ $contacto = get_field('contacto');
 	                  </div>
 		            </div>
 	   			</div>
-            <?php endif; ?>            
+            <?php endif; ?>
     	<?php endwhile; ?>
     </div>
 <?php endif; ?>
@@ -168,7 +168,7 @@ $contacto = get_field('contacto');
 <!-- CONTACTO -->
 <div class="section contacto" id="contacto">
 	<div class="section_wrap">
-		<div class="container-fluid">		
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6 col-xl-5">
 					<!-- ANIMATION HEAD > number, section y title -->
@@ -176,21 +176,21 @@ $contacto = get_field('contacto');
 						<div class="animated_head__content">
 							<div class="animated_head__content__top">
 								<div class="animated_head__section"><span><?php echo $contacto['section']; ?></span></div>
-							</div>	
+							</div>
 							<div class="animated_head__title animated_letters"><?php echo $contacto['titulo']; ?></div>
 							<div class="animated_head__slogan"><?php echo $contacto['texto']; ?></div>
 							<div class="normal__animation">
 								<p class="h5 mt-5 pt-3">Managed by</p>
 								<a href="https://asg-homes.com/" target="_blank"><img src="<?php bloginfo( 'template_url' ); ?>/img/ASG_logo.svg" alt=""></a>
 							</div>
-						</div>					
+						</div>
 					</div>
 
 				</div>
 				<div class="col-lg-6 col-xl-7">
 					<div class="normal__animation2 pt-5 mt-5">
 						<?php echo do_shortcode('[contact-form-7 id="6" title="Formulario de contacto 1"]') ?>
-					</div>			
+					</div>
 				</div>
 			</div>
 		</div>
@@ -216,19 +216,19 @@ $contacto = get_field('contacto');
 				<button type="button" class="close" data-dismiss="modal">
 					<img src="<?php bloginfo( 'template_url' ); ?>/img/close_modal.png">
 					<span class="text d-none d-md-inline-block">Close</span>
-				</button>	
+				</button>
 
 				<!-- CARRUSEL NAVIGATION -->
 				<div class="carrusel__navigation">
 					<div class="carrusel__navigation__bar">
 						<div class="carrusel__navigation__bar_number carrusel__navigation__bar__current">
 							<div class="current_0">00</div>
-							<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) { 
+							<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) {
 								if($n == 1): $active = 'active'; else: $active = ''; endif; ?>
 								<div class="current_item current_<?php echo $n; ?> <?php echo $active; ?>">0<?php echo $n; ?></div>
 							<?php $n++; }  ?>
 						</div>
-						
+
 						<div class="carrusel__navigation__bar_progress">
 							<?php $n = 1; foreach ($carrusel['imagenes'] as $imagen) { ?>
 								<div class="carrusel__navigation__bar_progress_item" data-position="<?php echo $n; ?>"></div>
@@ -239,7 +239,7 @@ $contacto = get_field('contacto');
 
 					</div>
 				</div>
-			
+
 				<div id="modalBody">
 					<div class="owl-carousel">
 						<?php $m = 1; foreach ( $carrusel['imagenes'] as $imagen ) { ?>

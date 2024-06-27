@@ -1,35 +1,56 @@
 // ESTILOS
-.estilos_botones {
-    @extend  .fuente_gt_america_medium;
+.buttons {
     text-transform: uppercase;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
-    line-height: 1.2em;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1em;
     border: 0;
-    @media ( min-width: 992px  ) { padding: 1.5rem 4rem;  font-size: 1.2rem; }
-    @media ( min-width: 1200px  ) {  font-size: 1.3rem; }
+    border-radius: 100px;
+    transition: all .3s;
+    @media ( min-width: 992px  ) { padding: 1.8rem 4rem;  font-size: 1.2rem; }
     span { display: inline-block; }
 }
 
 // BOTONES
-.btn, .vc_btn3 {
-    @extend  .estilos_botones;
-    color: $color_white !important;
-    background: $color_rojizo !important;
-    border-radius: 100px;
-    border: 2px solid $color_white;
-    transition: all .3s;
-    &:hover { background: $color_white !important; color: $color_rojizo !important; }
+.btn {
+    @extend .buttons;
     path { fill: $color_white !important; }
 }
 
-.btn_white {
-    background: transparent !important;
-    border: 2px solid $color_white;
+.btn-primary {
+    background: $color_primary !important;
+    color: $color_secondary !important;
+    path { fill: $color_secondary !important; }
     &:hover {
-        background: transparent !important;
-        color: $color_rojizo !important;
-        border: 2px solid $color_rojizo;
+        background: $color_white !important;
+        color: $color_primary !important;
+        path { fill: $color_primary !important; }
+    }
+
+}
+
+.btn-secondary {
+    background: $color_secondary !important;
+    color: $color_primary !important;
+    path { fill: $color_primary !important; }
+    &:hover {
+        background: $color_primary !important;
+        color: $color_secondary !important;
+        path { fill: $color_secondary !important; }
+    }
+}
+
+.btn-outline-primary {
+    background: transparent !important;
+    color: $color_primary !important;
+    border: 2px solid $color_primary;
+    path { fill: $color_primary !important; }
+    &:hover {
+        background: $color_primary !important;
+        color: $color_secondary !important;
+        border: 2px solid $color_primary;
+        path { fill: $color_secondary !important; }
     }
 }
 

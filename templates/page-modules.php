@@ -13,11 +13,7 @@ if(have_rows('modules')):
         require( TEMPLATEPATH . '/template-parts/modules/variables.php' );?>
 
         <div id="<?php echo $config['id']; ?>" class="module <?php echo get_row_layout(); ?> module-<?php echo $n; ?> <?php echo $config_module; ?>">
-
-            <div class="module-wrapper">
-                <?php /* Get Modules */ require( TEMPLATEPATH . '/template-parts/modules/modules.php' );  ?>
-            </div>
-
+            <?php /* Get Modules */ require( TEMPLATEPATH . '/template-parts/modules/modules.php' );  ?>
         </div>
 
     <?php

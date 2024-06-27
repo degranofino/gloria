@@ -1,4 +1,3 @@
-<!-- CARRUSEL OWL -->
 <div class="owl-carousel">
     <?php $m = 1; foreach ($media as $image) { ?>
         <div class="item" data-position="<?php echo $m; ?>">

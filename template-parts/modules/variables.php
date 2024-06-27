@@ -6,13 +6,13 @@ $media = get_sub_field('media');
 $config = get_sub_field('config');
 $items = get_sub_field('items');
 $extras = get_sub_field('extras');
-$buttons = get_sub_field('buttons');
+$buttons = get_sub_field('button');
 $scroll = get_sub_field('scroll');
 
 // config
 $config_module = '';
 if( $config['theme'] ){ $config_module .= ' '.$config['theme']; }
-if( $config['bg_color'] ){ $config_module .= ' '.$config['bg_color']; }
+if( $config['background'] ){ $config_module .= ' '.$config['background']; }
 if( $config['width']){ $config_module .= ' '.$config['width']; }
 if( $config['margins']['margin-top'] ){ $config_module .= ' '.$config['margins']['margin-top']; }
 if( $config['margins']['margin-bottom'] ){ $config_module .= ' '.$config['margins']['margin-bottom']; }

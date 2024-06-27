@@ -1,51 +1,21 @@
 .fuente_regular {
-    @extend .fuente_gt_america;
-    font-size: 1.4rem;
+    font-family: $font_family;
+    font-size: 1.2rem;
+    font-weight: 300;
     line-height: 1.4em !important;
-    color: $color_white;
-    @media ( min-width: 768px  ) { font-size: 1.8rem; }
+    color: $color-primary;
+    @media ( min-width: 768px  ) { font-size: 1.6rem; }
+    @media ( min-width: 992px  ) { font-size: 1.8rem; }
+    @media ( min-width: 1200px  ) { font-size: 2rem; }
 }
 
 /****** COLORES TEXTOS ******/
-.f__blanco, .f__blanco p, p.f__blanco { color: $color_white !important; }
-.f__marron_claro, .f__marron_claro p, p.f__marron_claro { color: $color_marron_claro !important; }
-.f__marron_medio, .f__marron_medio p, p.f__marron_medio { color: $color_marron_medio !important; }
-.f__marron_oscuro, .f__marron_oscuro p, p.f__marron_oscuro { color: $color_marron_oscuro !important; }
-.f__gris, .f__gris p, p.f__gris { color: $color_gris !important; }
-.f__rojizo, .f__rojizo p, p.f__rojizo { color: $color_rojizo !important; }
+.color-primary { color: $color_primary; }
+.color-secondary { color: $color_secondary; }
 
 /****** COLORES FONDOS ******/
-.bg__blanco { background: $color_white; }
-.bg__marron_claro { background: $color_marron_claro; }
-.bg__marron_medio { background: $color_marron_medio; }
-.bg__marron_oscuro { background: $color_marron_oscuro; }
-.bg__gris { background: $color_gris; }
-.bg__rojizo { background: $color_rojizo; }
-
-/****** TIPOS DE LETRAS ******/
-.f__canela__thin, .f__canela__thin p,
-.f__canela__thin h1, .f__canela__thin h2,
-.f__canela__thin h3, .f__canela__thin h4, .f__canela__thin h5  {
-    @extend .fuente_canela__thin;
-}
-
-.f__canela__thin__it, .f__canela__thin__it p,
-.f__canela__thin__it h1, .f__canela__thin__it h2,
-.f__canela__thin__it h3, .f__canela__thin__it h4, .f__canela__thin__it h5  {
-    @extend .fuente_canela__thin__it ;
-}
-
-.f__gt_america, .f__gt_america p,
-.f__gt_america h1, .f__gt_america h2,
-.f__gt_america h3, .f__gt_america h4, .f__gt_america h5  {
-    @extend .fuente_gt_america;
-}
-
-.f__gt_america_medium, .f__gt_america_medium p,
-.f__gt_america_medium h1, .f__gt_america_medium h2,
-.f__gt_america_medium h3, .f__gt_america_medium h4, .f__gt_america_medium h5  {
-    @extend .fuente_gt_america_medium;
-}
+.bg-primary { background-color: $color_primary !important; }
+.bg-secondary { background-color: $color_secondary !important; }
 
 /****** TAMAÑOS DE LETRAS ******/
 .f__14, .f__14 p,

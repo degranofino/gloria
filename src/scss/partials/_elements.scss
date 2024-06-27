@@ -20,7 +20,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: $color_marron_claro;
+    background: $color_secondary;
     overflow-x: hidden;
     @extend .fuente_regular;
 }
@@ -38,19 +38,21 @@ p {
 
 // LINKS
 a {
-    color: $color_white;
+    color: $color-primary;
     text-decoration: none;
     transition: all .3s;
     &:hover, &:focus, &:active { text-decoration: none;}
 }
 
 // SEPARADORES
-hr{
+hr {
     border-top: 1px solid #ddd;
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     width: 100%;
-    &.white_hr { border-top: 1px solid $color_marron_medio; }
+    &.white_hr {
+        border-top: 1px solid $color_primary;
+    }
 }
 
 // LISTADOS

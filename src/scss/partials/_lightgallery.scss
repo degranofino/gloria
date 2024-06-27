@@ -1,0 +1,43 @@
+.lg-backdrop {
+    background: rgba($color: $color-primary, $alpha: 0.95);
+}
+
+.lg-toolbar {
+    display: none;
+}
+
+button.lg-prev,
+button.lg-next {
+
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    overflow: hidden;
+    text-indent: -999px;
+    width: 13px;
+    height: 34px;
+    outline: none;
+    background-color: transparent;
+
+    @media ( min-width: 992px ) {
+        width: 25px;
+        height: 64px;
+    }
+
+    &:before {
+        display: none;
+    }
+
+}
+
+button.lg-prev {
+    left: 30px;
+    background-image: url(../img/arrow_left.svg) !important;
+    background-size: cover !important;
+}
+
+button.lg-next {
+    right: 30px;
+    background-image: url(../img/arrow_right.svg) !important;
+    background-size: cover !important;
+}

@@ -46,8 +46,12 @@ if (jQuery('.animated_letters').length) { animated_letters(); }
 /*****************************************/
 /******** LOADING PACE FIRST TIME ********/
 /*****************************************/
+
+paceOptions = {
+  eventLag: false, // disabled
+};
+
 Pace.once('hide', function () {
-  // INICIO
   inicio();
 });
 
@@ -58,23 +62,45 @@ function inicio() {
 
   // LOADING
   jQuery('body').addClass('loaded');
+
   setTimeout(
     function () {
-      jQuery('.cargador').css('display', 'none');
+      jQuery('.loading').css('display', 'none');
     }, 500);
 
   // BASICAS
   shrink_body();
-  if (jQuery('.carrusel').length) { bg_carousel(); }
+  if (jQuery('.module__banner').length) { bg_carousel(); }
   if (jQuery('.type-carousel').length) { gallery_carousel(); }
   if (jQuery('.type-slider').length) { gallery_slider(); }
   if (jQuery('.animated_head').length) { animate_heads(); }
-  if (jQuery('.skills__item').length) { animate_iconos(); }
+  if (jQuery('.icons').length) { animate_iconos(); }
   if (jQuery('.banner__content').length) { animate_banner(); }
-  if (jQuery('.carrusel').length) { animate_cabecera(); }
+  if (jQuery('.module__banner').length) { animate_cabecera(); }
   if (jQuery('.normal__animation').length) { scroll_magic(); }
   if (jQuery('.modal').length) { btn_contacto_modal(); }
   if (jQuery('.btn_ancla_contact').length) { btn_contacto(); }
+  if (jQuery('.lg__gallery').length) { lg_gallery(); }
+}
+
+function lg_gallery() {
+
+  var elements = document.getElementsByClassName('lg__gallery');
+
+  for (let item of elements) {
+    lightGallery(item, {
+      share: false,
+      selector: 'a',
+      speed: 500,
+      licenseKey: 'RWGFX-KWFPH-57MZ4-GKE8B',
+      counter: false,
+      mousewheel: true,
+      download: false,
+      mobileSettings: {
+        showCloseIcon: true
+      }
+    })
+  }
 }
 
 /*********** BTN CONTACT MODAL  ************/
@@ -126,7 +152,7 @@ function scroll_magic() {
     triggerElement: ".normal__animation",
     triggerHook: 1, // show, when scrolled 10% into view
     // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 50, // move trigger to center of element
+    offset: 10, // move trigger to center of element
     // reverse: false
   })
     .setClassToggle(".normal__animation", "animation") // add class to reveal
@@ -137,7 +163,7 @@ function scroll_magic() {
     triggerElement: ".normal__animation2",
     triggerHook: 1, // show, when scrolled 10% into view
     // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 50, // move trigger to center of element
+    offset: 10, // move trigger to center of element
     // reverse: false
   })
     .setClassToggle(".normal__animation2", "animation") // add class to reveal
@@ -167,39 +193,42 @@ function scroll_magic() {
 /*****************************************/
 function bg_carousel() {
 
-  var owl = jQuery('.carrusel .owl-carousel');
+  var owl = jQuery('.module__banner .owl-carousel');
 
-  var $elemento;
+  // var $elemento;
 
-  owl.on('initialized.owl.carousel', function (event) {
-    jQuery('.owl-carousel .active').eq(1).addClass('focus');
-    jQuery('.owl-carousel .active').eq(2).addClass('focus');
-    $elemento = event.item.index;
-  });
+  // owl.on('initialized.owl.carousel', function (event) {
+  //   jQuery('.owl-carousel .active').eq(1).addClass('focus');
+  //   jQuery('.owl-carousel .active').eq(2).addClass('focus');
+  //   $elemento = event.item.index;
+  // });
 
   owl.owlCarousel({
     loop: true,
     margin: 0,
-    nav: true,
+    nav: false,
     items: 1,
-    dots: false
+    dots: false,
+    autoplay: true,
+    animateIn: 'fadeIn', // add this
+    animateOut: 'fadeOut' // and this
   })
 
-  owl.on('translated.owl.carousel', function (event) {
+  // owl.on('translate.owl.carousel', function (event) {
 
-    var current = jQuery('.modal .owl-carousel .active');
-    var current_position = jQuery('.modal .owl-carousel .active').find('.item').data('position');
+  //   var current = jQuery('.owl-carousel .active');
+  //   var current_position = jQuery('.owl-carousel .active').find('.item').data('position');
 
-    jQuery('.modal .current_item').removeClass('active');
-    jQuery('.modal .current_' + current_position).addClass('active');
+  //   jQuery('.current_item').removeClass('active');
+  //   jQuery('.current_' + current_position).addClass('active');
 
-    jQuery('.modal .carrusel__navigation__bar_progress_item').removeClass('active');
+  //   jQuery('.carrusel__navigation__bar_progress_item').removeClass('active');
 
-    for (var i = 0; i < current_position; i++) {
-      var real = i + 1;
-      jQuery('.modal .carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
-    }
-  });
+  //   for (var i = 0; i < current_position; i++) {
+  //     var real = i + 1;
+  //     jQuery('.carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
+  //   }
+  // });
 
 }
 
@@ -208,40 +237,46 @@ function bg_carousel() {
 /*****************************************/
 function gallery_carousel() {
 
-  var owl = jQuery('.type-carousel .owl-carousel');
+  jQuery('.type-carousel').each(function () {
 
-  var $elemento;
+    var _this = this;
+    var $elemento;
 
-  owl.on('initialized.owl.carousel', function (event) {
-    jQuery('.owl-carousel .active').eq(1).addClass('focus');
-    jQuery('.owl-carousel .active').eq(2).addClass('focus');
-    $elemento = event.item.index;
-  });
+    var owl = jQuery(_this).find('.owl-carousel');
 
-  owl.owlCarousel({
-    loop: true,
-    margin: 0,
-    nav: true,
-    autoWidth: true,
-    items: 3,
-    dots: false
+    owl.on('initialized.owl.carousel', function (event) {
+      jQuery('.owl-carousel .active').eq(1).addClass('focus');
+      jQuery('.owl-carousel .active').eq(2).addClass('focus');
+      $elemento = event.item.index;
+    });
+
+    owl.owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      autoWidth: true,
+      items: 3,
+      dots: false
+    })
+
+    owl.on('translated.owl.carousel', function (event) {
+
+      console.log('translated')
+
+      var current = jQuery(_this).find('.active');
+      var current_position = jQuery(_this).find('.active').find('.item').attr('data-position');
+
+      jQuery(_this).find('.current_item').removeClass('active');
+      jQuery(_this).find('.current_' + current_position).addClass('active');
+      jQuery(_this).find('.carrusel__navigation__bar_progress_item').removeClass('active');
+
+      for (var i = 0; i < current_position; i++) {
+        var real = i + 1;
+        jQuery(_this).find('.carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
+      }
+    });
+
   })
-
-  owl.on('translated.owl.carousel', function (event) {
-
-    var current = jQuery('.modal .owl-carousel .active');
-    var current_position = jQuery('.modal .owl-carousel .active').find('.item').data('position');
-
-    jQuery('.modal .current_item').removeClass('active');
-    jQuery('.modal .current_' + current_position).addClass('active');
-
-    jQuery('.modal .carrusel__navigation__bar_progress_item').removeClass('active');
-
-    for (var i = 0; i < current_position; i++) {
-      var real = i + 1;
-      jQuery('.modal .carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
-    }
-  });
 
 }
 
@@ -250,39 +285,45 @@ function gallery_carousel() {
 /*****************************************/
 function gallery_slider() {
 
-  var owl_slider = jQuery('.type-slider .owl-carousel');
+  jQuery('.type-slider').each(function () {
 
-  var $elemento;
+    var _this = this;
+    var $elemento;
 
-  owl_slider.on('initialized.owl.carousel', function (event) {
-    jQuery('.owl-carousel .active').eq(1).addClass('focus');
-    jQuery('.owl-carousel .active').eq(2).addClass('focus');
-    $elemento = event.item.index;
-  });
+    var owl = jQuery(_this).find('.owl-carousel');
 
-  owl_slider.owlCarousel({
-    loop: true,
-    margin: 0,
-    nav: true,
-    items: 1,
-    dots: false
+    owl.on('initialized.owl.carousel', function (event) {
+      jQuery('.owl-carousel .active').eq(1).addClass('focus');
+      jQuery('.owl-carousel .active').eq(2).addClass('focus');
+      $elemento = event.item.index;
+    });
+
+    owl.owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      items: 1,
+      dots: false
+    })
+
+    owl.on('translated.owl.carousel', function (event) {
+
+      console.log('translated')
+
+      var current = jQuery(_this).find('.active');
+      var current_position = jQuery(_this).find('.active').find('.item').attr('data-position');
+
+      jQuery(_this).find('.current_item').removeClass('active');
+      jQuery(_this).find('.current_' + current_position).addClass('active');
+      jQuery(_this).find('.carrusel__navigation__bar_progress_item').removeClass('active');
+
+      for (var i = 0; i < current_position; i++) {
+        var real = i + 1;
+        jQuery(_this).find('.carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
+      }
+    });
+
   })
-
-  // owl.on('translated.owl.carousel', function (event) {
-
-  //   var current = jQuery('.modal .owl-carousel .active');
-  //   var current_position = jQuery('.modal .owl-carousel .active').find('.item').data('position');
-
-  //   jQuery('.modal .current_item').removeClass('active');
-  //   jQuery('.modal .current_' + current_position).addClass('active');
-
-  //   jQuery('.modal .carrusel__navigation__bar_progress_item').removeClass('active');
-
-  //   for (var i = 0; i < current_position; i++) {
-  //     var real = i + 1;
-  //     jQuery('.modal .carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
-  //   }
-  // });
 
 }
 
@@ -367,31 +408,37 @@ function animate_heads() {
       element: _this,
       handler: function (direction) {
         jQuery(this.element).addClass('animation');
-        jQuery('.animation .animated_letters > span').each(function (i) {
+        jQuery(this.element).find('.animated_letters > span').each(function (i) {
           var $li = jQuery(this);
           setTimeout(function () {
             $li.addClass('loaded');
           }, i * 100); // delay 100 ms
         });
       },
-      offset: '80%'
+      offset: '60%'
     });
   });
+
 }
 
 // ANIMACION ICONOS
 function animate_iconos() {
-  var waypoints = jQuery('.skills__item').waypoint({
-    handler: function (direction) {
-      element: this,
-        jQuery('.skills__item li').each(function (i) {
-          var $li = jQuery(this);
-          setTimeout(function () {
-            $li.addClass('animation');
-          }, i * 150); // delay 100 ms
-        });
-    },
-    offset: '80%'
+
+  jQuery('.icons__list').each(function () {
+    var _this = this;
+    var inview = new Waypoint({
+      element: _this,
+      handler: function (direction) {
+        element: this,
+          jQuery(this.element).find('li').each(function (i) {
+            var $li = jQuery(this);
+            setTimeout(function () {
+              $li.addClass('animation');
+            }, i * 150); // delay 100 ms
+          });
+      },
+      offset: '60%'
+    });
   })
 }
 
@@ -414,11 +461,11 @@ function animate_banner() {
 
 // ANIMACION CABECERA
 function animate_cabecera() {
-  var waypoints = jQuery('.carrusel').waypoint({
+  var waypoints = jQuery('.module__banner').waypoint({
     handler: function (direction) {
       element: this,
         jQuery(this.element).addClass('animation');
-      jQuery('.carrusel .animated_letters > span').each(function (i) {
+      jQuery('.module__banner .animated_letters > span').each(function (i) {
         var $li = jQuery(this);
         setTimeout(function () {
           $li.addClass('loaded');
