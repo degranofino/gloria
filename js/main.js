@@ -1,13 +1,56 @@
-/*****************************************/
-/********** FUNCIONES ESTANDAR ***********/
-/*****************************************/
-svg_replace();
-boton_to_top_normal();
-if (jQuery('.animated_letters').length) { animated_letters(); }
+// before start
+beforeStart();
 
-/*****************************************/
-/************** FORMULARIOS **************/
-/*****************************************/
+// Loading
+paceOptions = {
+  eventLag: false, // disabled
+};
+
+Pace.once('hide', function () {
+  start();
+});
+
+//  before start
+function beforeStart() {
+
+  shrink_body();
+  svg_replace();
+  boton_to_top_normal();
+
+  if (jQuery('.animated_letters').length) { animated_letters(); }
+  if (jQuery('.module__banner').length) { carousel__banner(); }
+  if (jQuery('.type-carousel').length) { gallery_carousel(); }
+  if (jQuery('.type-slider').length) { gallery_slider(); }
+  if (jQuery('.lg__gallery').length) { lg_gallery(); }
+
+}
+
+// after start
+function start() {
+
+  // loading
+  jQuery('body').addClass('loaded');
+
+  setTimeout(
+    function () {
+      jQuery('.loading').css('display', 'none');
+    }, 500);
+
+  if (jQuery('.animated_head').length) { animate_heads(); }
+  if (jQuery('.icons').length) { animate_iconos(); }
+  if (jQuery('.banner__content').length) { animate_banner(); }
+  if (jQuery('.module__banner').length) { animate_cabecera(); }
+  if (jQuery('.normal__animation').length) { scroll_magic(); }
+  if (jQuery('.btn_ancla_contact').length) { btn_contacto(); }
+
+}
+
+function resize() {
+
+}
+
+// Formularios OK
+
 (function () {
 
   // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
@@ -43,45 +86,7 @@ if (jQuery('.animated_letters').length) { animated_letters(); }
   }
 })();
 
-/*****************************************/
-/******** LOADING PACE FIRST TIME ********/
-/*****************************************/
-
-paceOptions = {
-  eventLag: false, // disabled
-};
-
-Pace.once('hide', function () {
-  inicio();
-});
-
-/*****************************************/
-/*********** FUNCIONES INICIO ************/
-/*****************************************/
-function inicio() {
-
-  // LOADING
-  jQuery('body').addClass('loaded');
-
-  setTimeout(
-    function () {
-      jQuery('.loading').css('display', 'none');
-    }, 500);
-
-  // BASICAS
-  shrink_body();
-  if (jQuery('.module__banner').length) { bg_carousel(); }
-  if (jQuery('.type-carousel').length) { gallery_carousel(); }
-  if (jQuery('.type-slider').length) { gallery_slider(); }
-  if (jQuery('.animated_head').length) { animate_heads(); }
-  if (jQuery('.icons').length) { animate_iconos(); }
-  if (jQuery('.banner__content').length) { animate_banner(); }
-  if (jQuery('.module__banner').length) { animate_cabecera(); }
-  if (jQuery('.normal__animation').length) { scroll_magic(); }
-  if (jQuery('.modal').length) { btn_contacto_modal(); }
-  if (jQuery('.btn_ancla_contact').length) { btn_contacto(); }
-  if (jQuery('.lg__gallery').length) { lg_gallery(); }
-}
+// Lightgallery OK
 
 function lg_gallery() {
 
@@ -101,20 +106,6 @@ function lg_gallery() {
       }
     })
   }
-}
-
-/*********** BTN CONTACT MODAL  ************/
-function btn_contacto_modal() {
-  jQuery('.modal header .btn_contacto').click(function (event) {
-    event.preventDefault();
-    jQuery('.modal').modal('toggle');
-    setTimeout(
-      function () {
-        jQuery('html, body').animate({
-          scrollTop: jQuery('#contacto').offset().top
-        }, 500);
-      }, 500);
-  });
 }
 
 /*********** BTN CONTACT  ************/
@@ -147,61 +138,58 @@ function scroll_magic() {
   // init controller
   var controller = new ScrollMagic.Controller();
 
-  // build scene
-  new ScrollMagic.Scene({
-    triggerElement: ".normal__animation",
-    triggerHook: 1, // show, when scrolled 10% into view
-    // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 10, // move trigger to center of element
-    // reverse: false
-  })
-    .setClassToggle(".normal__animation", "animation") // add class to reveal
-    .addTo(controller);
+  if (jQuery('.normal__animation').length) {
+    jQuery('.normal__animation').each(function () {
+      // build scene
+      new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1, // show, when scrolled 10% into view
+        // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+        offset: 80, // move trigger to center of element
+        // reverse: false
+      })
+        .setClassToggle(this, "animation") // add class to reveal
+        .addTo(controller);
+    })
+  }
 
-  // build scene
-  new ScrollMagic.Scene({
-    triggerElement: ".normal__animation2",
-    triggerHook: 1, // show, when scrolled 10% into view
-    // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
-    offset: 10, // move trigger to center of element
-    // reverse: false
-  })
-    .setClassToggle(".normal__animation2", "animation") // add class to reveal
-    .addTo(controller);
+  if (jQuery('.normal__animation2').length) {
+    jQuery('.normal__animation2').each(function () {
+      // build scene
+      new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 1, // show, when scrolled 10% into view
+        // duration: "100%", // hide 10% before exiting view (80% + 10% from bottom)
+        offset: 10, // move trigger to center of element
+        // reverse: false
+      })
+        .setClassToggle(this, "animation") // add class to reveal
+        .addTo(controller);
+    })
+  }
 
-  // build scenes
-  new ScrollMagic.Scene({
-    triggerElement: ".banner__bg",
-    triggerHook: "onEnter",
-    duration: "200%"
-  })
-    .setTween(".banner_bg__fondo", { y: "100%", ease: Linear.easeNone })
-    .addTo(controller);
+  if (jQuery('.banner__bg').length) {
+    jQuery('.banner__bg').each(function () {
+      var banner_bg = jQuery(this).find('banner_bg__fondo');
+      // build scenes
+      new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: "onEnter",
+        duration: "200%"
+      })
+        .setTween(banner_bg, { y: "100%", ease: Linear.easeNone })
+        .addTo(controller);
+    })
+  }
 
-  // build scenes
-  new ScrollMagic.Scene({
-    triggerElement: ".intro",
-    triggerHook: 0,
-    offset: "300",
-  })
-    .setClassToggle(".banner_bg__fondo", "animation") // add class to reveal
-    .addTo(controller)
 }
 
 /*****************************************/
 /******** CARRUSEL FULLPAGE BG ***********/
 /*****************************************/
-function bg_carousel() {
+function carousel__banner() {
 
   var owl = jQuery('.module__banner .owl-carousel');
-
-  // var $elemento;
-
-  // owl.on('initialized.owl.carousel', function (event) {
-  //   jQuery('.owl-carousel .active').eq(1).addClass('focus');
-  //   jQuery('.owl-carousel .active').eq(2).addClass('focus');
-  //   $elemento = event.item.index;
-  // });
 
   owl.owlCarousel({
     loop: true,
@@ -213,22 +201,6 @@ function bg_carousel() {
     animateIn: 'fadeIn', // add this
     animateOut: 'fadeOut' // and this
   })
-
-  // owl.on('translate.owl.carousel', function (event) {
-
-  //   var current = jQuery('.owl-carousel .active');
-  //   var current_position = jQuery('.owl-carousel .active').find('.item').data('position');
-
-  //   jQuery('.current_item').removeClass('active');
-  //   jQuery('.current_' + current_position).addClass('active');
-
-  //   jQuery('.carrusel__navigation__bar_progress_item').removeClass('active');
-
-  //   for (var i = 0; i < current_position; i++) {
-  //     var real = i + 1;
-  //     jQuery('.carrusel__navigation__bar_progress_item[data-position="' + real + '"]').addClass('active');
-  //   }
-  // });
 
 }
 
@@ -386,18 +358,18 @@ function boton_to_top_normal() {
 /******** ANIMACIONES TRABAJOS ********/
 
 // ANIMACION BLOQUES GENERALES
-function animate_blocks() {
-  jQuery('.normal__animation').each(function () {
-    var _this = this;
-    var inview = new Waypoint({
-      element: _this,
-      handler: function (direction) {
-        jQuery(this.element).addClass('animation');
-      },
-      offset: '100%'
-    });
-  });
-}
+// function animate_blocks() {
+//   jQuery('.normal__animation').each(function () {
+//     var _this = this;
+//     var inview = new Waypoint({
+//       element: _this,
+//       handler: function (direction) {
+//         jQuery(this.element).addClass('animation');
+//       },
+//       offset: '60%'
+//     });
+//   });
+// }
 
 // ANIMACION HEADERS
 function animate_heads() {
