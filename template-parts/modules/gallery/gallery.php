@@ -19,8 +19,8 @@
 				<div class="carrusel__navigation__bar_progress_item" data-position="<?php echo $n; ?>"></div>
 			<?php $n++; }  ?>
 		</div>
-		<div class="carrusel__navigation__bar_number carrusel__navigation__bar__total">
-			0<?php echo count($media); ?>
+		<div class="carrusel__navigation__bar_number carrusel__navigation__bar__total">			
+			<?php if(count($media) < 10) { ?>0<?php } ?><?php echo count($media); ?>
 		</div>
 	</div>
 </div>
