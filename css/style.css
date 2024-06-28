@@ -1101,29 +1101,6 @@ select::-ms-expand {
     }
 }
 */
-button.btn {
-  color: #E8DCC8 !important;
-  background: #3A2619 !important;
-  border: 2px solid #fff;
-  border-radius: 100px;
-  transition: all 0.3s;
-  margin: 2rem 0 0 0;
-  display: inherit;
-}
-@media (min-width: 768px) {
-  button.btn {
-    margin: 3rem 0 0 0;
-  }
-}
-@media (min-width: 1600px) {
-  button.btn {
-    margin: 5rem 0 0 0;
-  }
-}
-button.btn:hover {
-  background: #231D1A !important;
-}
-
 .ajax-loader {
   position: absolute;
   right: 0;
@@ -1293,7 +1270,7 @@ input[type=text],
 input[type=email],
 input[type=tel],
 select,
-textarea, button.btn, .input__label {
+textarea, .input__label {
   text-transform: uppercase;
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
@@ -1309,7 +1286,7 @@ textarea, button.btn, .input__label {
   input[type=email],
   input[type=tel],
   select,
-  textarea, button.btn, .input__label {
+  textarea, .input__label {
     padding: 1.8rem 4rem;
     font-size: 1.2rem;
   }
@@ -1377,6 +1354,22 @@ textarea span, .input__label span {
 .btn__arrow {
   position: relative;
   padding-right: 7.2rem !important;
+}
+.btn__arrow:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 9px;
+  background: url(../img/arrow_btn.svg);
+  background-size: cover;
+}
+.btn__arrow:hover {
+  background-color: transparent !important;
+  color: #3A2619 !important;
 }
 .btn__arrow .button_modal_gallery__icon {
   width: 19px;

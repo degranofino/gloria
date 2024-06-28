@@ -56,8 +56,28 @@
 
 // BOTON ARROW
 .btn__arrow {
+
     position: relative;
     padding-right: 7.2rem !important;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 19px;
+        height: 9px;
+        background: url(../img/arrow_btn.svg);
+        background-size: cover;
+    }
+
+    &:hover {
+        background-color: transparent !important;
+        color: $color_primary !important;
+    }
+
     .button_modal_gallery__icon {
         width: 19px;
         height: 10px;
