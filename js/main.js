@@ -1,14 +1,19 @@
 // before start
 beforeStart();
 
-// Loading
-paceOptions = {
-  eventLag: false, // disabled
-};
+// // Loading
+// paceOptions = {
+//   eventLag: false, // disabled
+// };
 
-Pace.once('hide', function () {
+// Pace.once('hide', function () {
+//   start();
+// });
+
+// Loading
+window.addEventListener('load', () => {
   start();
-});
+})
 
 //  before start
 function beforeStart() {
@@ -42,6 +47,7 @@ function start() {
   if (jQuery('.module__banner').length) { animate_cabecera(); }
   if (jQuery('.normal__animation').length) { scroll_magic(); }
   if (jQuery('.btn_ancla_contact').length) { btn_contacto(); }
+  if (jQuery('.btn__gallery').length) { btnGallery(); }
 
 }
 
@@ -85,6 +91,20 @@ function resize() {
     }
   }
 })();
+
+/*********** BTN GALLERY  ************/
+function btnGallery () {
+  jQuery('.btn__gallery').click(function(event) {
+    event.preventDefault();
+    var gallery = jQuery(this).attr('data-gallery');
+    if (gallery) {
+      var firstChild = jQuery('#' + gallery + ' a:first-child');
+      if (firstChild.length) {
+        firstChild[0].click();
+      } 
+    } 
+  });
+}
 
 // Lightgallery OK
 

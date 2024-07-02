@@ -1,3 +1,12 @@
+.module__form {
+    .module__content p {
+        line-height: 1.6em !important;
+    }
+    h5 {
+        font-weight: bold;
+    }
+}
+
 // contact form 7
 .wpcf7-form {
 
@@ -254,6 +263,7 @@ div.wpcf7-mail-sent-ok {
 // label
 .input__label {
     @extend  .buttons;
+    text-transform: none !important;
     position: absolute;
     padding-left: 0 !important;
     padding-right: 0 !important;

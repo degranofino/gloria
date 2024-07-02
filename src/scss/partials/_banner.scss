@@ -54,10 +54,11 @@
     .banner__title {
         font-family: $font-heading;
         color: $color-secondary;
-        font-size: 6rem;
-        @media ( min-width: 768px  ) { font-size: 8rem; width: 50%; }
-        @media ( min-width: 1200px  ) { font-size: 10rem; }
-        @media ( min-width: 1600px  ) { font-size: 12rem; }
+        font-size: 7.2rem;
+        margin-bottom: 20px;
+        @media ( min-width: 768px  ) { font-size: 8rem; width: 50%; margin-bottom: 25px; }
+        @media ( min-width: 1200px  ) { font-size: 10rem; margin-bottom: 30px; }
+        @media ( min-width: 1600px  ) { font-size: 12rem; margin-bottom: 40px; }
     }
 
     .banner__content p {
@@ -82,14 +83,15 @@
     transform: rotate(90deg);
     transform-origin: bottom right;
     margin-left: -13rem;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    @media ( min-width: 768px  ) { margin-left: -13rem; }
-    @media ( min-width: 1200px  ) { margin-left: -10rem; }
+    font-size: 12px;
+    // letter-spacing: 2px;
+    @media ( min-width: 768px  ) { margin-left: -13rem; font-size: 14px; }
+    @media ( min-width: 1200px  ) { margin-left: -10rem;  font-size: 16px;}
 
     .c-text {
         margin-right: 10px;
         color: $color-secondary;
+        font-style: italic;
     }
 
     .c-scrolldown {

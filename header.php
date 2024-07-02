@@ -18,9 +18,9 @@
     <div class="loading">
     	<div class="loading__brand">
     		<img src="<?php bloginfo( 'template_url' ); ?>/img/loading.png" class="img-fluid">
-			<div class="progress__bar">
+			<!-- <div class="progress__bar">
 				<div class="bar"></div>
-			</div>
+			</div> -->
     	</div>
     </div>
 
@@ -41,9 +41,9 @@
 		</a>
 
 		<?php if(is_front_page()): ?>
-			<a href="#contacto" class="btn btn-primary btn_ancla_contact"><?php _e('REGÍSTRATE AQUÍ','queens'); ?></a>
+			<a href="#contacto" class="btn btn-primary btn_ancla_contact"><?php _e('CONTÁCTANOS','queens'); ?></a>
 		<?php else: ?>
-			<a href="<?php bloginfo('url'); ?>/#contacto" class="btn btn-primary"><?php _e('REGÍSTRATE AQUÍ','queens'); ?></a>
+			<a href="<?php bloginfo('url'); ?>/#contacto" class="btn btn-primary"><?php _e('CONTÁCTANOS','queens'); ?></a>
 		<?php endif; ?>
 
 		<?php /*

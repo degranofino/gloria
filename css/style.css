@@ -25,7 +25,7 @@
   font-family: "DM Sans", sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
-  line-height: 1.4em !important;
+  line-height: 1.5em !important;
   color: #3A2619;
 }
 @media (min-width: 768px) {
@@ -598,7 +598,7 @@ li {
 @media (min-width: 1800px) {
   .section_wrap {
     padding: 22rem 0;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
   }
 }
@@ -738,17 +738,17 @@ header .navbar-brand {
 }
 header .navbar-brand img {
   transition: all 0.3s;
-  width: 71px;
+  width: 80px;
   height: auto;
 }
 @media (min-width: 768px) {
   header .navbar-brand img {
-    width: 200px;
+    width: 150px;
   }
 }
 @media (min-width: 1200px) {
   header .navbar-brand img {
-    width: 239px;
+    width: 200px;
   }
 }
 
@@ -863,6 +863,7 @@ header .navbar-brand img {
 
 button.lg-prev,
 button.lg-next {
+  padding: 0;
   position: absolute;
   top: 50%;
   transform: translate(-50%);
@@ -895,6 +896,13 @@ button.lg-next {
   right: 30px;
   background-image: url(../img/arrow_right.svg) !important;
   background-size: cover !important;
+}
+
+.module__form .module__content p {
+  line-height: 1.6em !important;
+}
+.module__form h5 {
+  font-weight: bold;
 }
 
 .wpcf7-form span {
@@ -1197,6 +1205,7 @@ div.wpcf7-mail-sent-ok {
 }
 
 .input__label {
+  text-transform: none !important;
   position: absolute;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -1271,6 +1280,7 @@ input[type=email],
 input[type=tel],
 select,
 textarea, .input__label {
+  font-family: "DM Sans";
   text-transform: uppercase;
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
@@ -1288,7 +1298,7 @@ textarea, .input__label {
   select,
   textarea, .input__label {
     padding: 1.8rem 4rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 .buttons span, .btn span, input span,
@@ -1581,22 +1591,26 @@ textarea span, .input__label span {
 .module__banner .banner__title {
   font-family: "ABC Arizona Flare", sans-serif;
   color: #E8DCC8;
-  font-size: 6rem;
+  font-size: 7.2rem;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .module__banner .banner__title {
     font-size: 8rem;
     width: 50%;
+    margin-bottom: 25px;
   }
 }
 @media (min-width: 1200px) {
   .module__banner .banner__title {
     font-size: 10rem;
+    margin-bottom: 30px;
   }
 }
 @media (min-width: 1600px) {
   .module__banner .banner__title {
     font-size: 12rem;
+    margin-bottom: 40px;
   }
 }
 .module__banner .banner__content p {
@@ -1624,22 +1638,24 @@ textarea span, .input__label span {
   transform: rotate(90deg);
   transform-origin: bottom right;
   margin-left: -13rem;
-  font-size: 2rem;
-  letter-spacing: 2px;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   .carrusel_scroll {
     margin-left: -13rem;
+    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
   .carrusel_scroll {
     margin-left: -10rem;
+    font-size: 16px;
   }
 }
 .carrusel_scroll .c-text {
   margin-right: 10px;
   color: #E8DCC8;
+  font-style: italic;
 }
 .carrusel_scroll .c-scrolldown {
   height: 1px;
@@ -1962,26 +1978,26 @@ textarea span, .input__label span {
   overflow: visible !important;
 }
 
-.icons {
+.container-fluid + .icons {
   padding-top: 7rem;
 }
 @media (min-width: 768px) {
-  .icons {
+  .container-fluid + .icons {
     padding-top: 10rem;
   }
 }
 @media (min-width: 992px) {
-  .icons {
+  .container-fluid + .icons {
     padding-top: 12rem;
   }
 }
 @media (min-width: 1200px) {
-  .icons {
+  .container-fluid + .icons {
     padding-top: 14rem;
   }
 }
 @media (min-width: 1600px) {
-  .icons {
+  .container-fluid + .icons {
     padding-top: 16rem;
   }
 }
@@ -2063,11 +2079,15 @@ textarea span, .input__label span {
   color: #3A2619;
 }
 
+.module__two-columns .lg__gallery {
+  display: none;
+}
+
 .module__section {
   font-size: 1.2rem;
+  font-weight: 500;
   line-height: 1em;
   text-transform: uppercase;
-  letter-spacing: 2px;
   padding-left: 9rem;
   position: relative;
   margin-bottom: 3rem;
@@ -2121,6 +2141,11 @@ textarea span, .input__label span {
 }
 @media (min-width: 1200px) {
   .module__title {
+    font-size: 7rem;
+  }
+}
+@media (min-width: 1600px) {
+  .module__title {
     font-size: 8rem;
   }
 }
@@ -2151,7 +2176,7 @@ textarea span, .input__label span {
 
 .module__precontent {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 @media (min-width: 992px) {
   .module__precontent {
@@ -2160,12 +2185,17 @@ textarea span, .input__label span {
   }
 }
 .module__precontent p {
-  font-size: 3rem !important;
   line-height: 1.2em !important;
+  font-size: 1.6rem !important;
+}
+@media (min-width: 768px) {
+  .module__precontent p {
+    font-size: 2.6rem !important;
+  }
 }
 
 .module__content {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 @media (min-width: 992px) {
   .module__content {
@@ -2347,7 +2377,7 @@ textarea span, .input__label span {
   transform: translateY(100%);
   opacity: 0;
   margin-right: 5px;
-  line-height: 1.1em;
+  line-height: 1em;
 }
 .animated_letters > span.loaded span {
   opacity: 1;
