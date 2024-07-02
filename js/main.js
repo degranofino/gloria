@@ -51,9 +51,7 @@ function start() {
 
 }
 
-function resize() {
-
-}
+function resize() {}
 
 // Formularios OK
 
@@ -253,7 +251,7 @@ function gallery_carousel() {
 
     owl.on('translated.owl.carousel', function (event) {
 
-      console.log('translated')
+      // console.log('translated')
 
       var current = jQuery(_this).find('.active');
       var current_position = jQuery(_this).find('.active').find('.item').attr('data-position');
@@ -300,7 +298,7 @@ function gallery_slider() {
 
     owl.on('translated.owl.carousel', function (event) {
 
-      console.log('translated')
+      // console.log('translated')
 
       var current = jQuery(_this).find('.active');
       var current_position = jQuery(_this).find('.active').find('.item').attr('data-position');
