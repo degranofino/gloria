@@ -123,13 +123,22 @@
     display: none;
     position: fixed;
     bottom: 30px;
-    right: 20px;
-    width: 32px; height: 32px;
+    right: 2.5rem;
+    width: 32px;
+    height: 32px;
     background-size: cover !important;
-    z-index: 5000;
+    z-index: 500;
     display: none !important;
     background: url(../img/boton_top.png);
-    @media ( min-width: 768px  ) { width: 44px; height: 44px; }
+    transform: translateX(50%);
+    @media ( min-width: 768px  ) {
+        width: 44px;
+        height: 44px;
+        right: 4rem;
+    }
+    @media ( min-width: 1200px  ) {
+        right: 7rem;
+    }
     &:hover {
         opacity: .8;
     }
@@ -137,7 +146,9 @@
 
 // SHRINK FUNCTIONS
 .shrink .back-to-top {
-    @media ( min-width: 768px  ) { display: inline-block !important; width: 44px; height: 44px; }
+    @media ( min-width: 768px  ) { 
+        display: inline-block !important;
+    }
 }
 
 /**************************************************************************/

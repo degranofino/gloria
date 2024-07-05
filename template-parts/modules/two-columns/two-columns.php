@@ -10,7 +10,9 @@
 				<div class="animated_head">
 					<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-section.php'); ?>
 					<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-title.php'); ?>
-					<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-subtitle.php'); ?>
+					<div class="d-none d-lg-block">
+						<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-subtitle.php'); ?>
+					</div>					
 					<?php if(!empty($gallery)): ?>
                         <a class="btn__gallery btn btn-outline-primary d-none d-lg-inline-block" data-gallery="gallery_<?php echo $rand; ?>"><?php _e('VER GALERÍA','nubay') ?></a>
                     <?php endif; ?>
@@ -20,8 +22,11 @@
 
 			<div class="col-lg-6 offset-lg-1 normal__animation">
 				<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-precontent.php'); ?>
+				<div class="d-lg-none">
+					<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-subtitle.php'); ?>
+				</div>	
 				<?php if(!empty($gallery)): ?>
-                    <a class="btn__gallery btn btn-outline-primary d-lg-none" data-gallery="gallery_<?php echo $rand; ?>"><?php _e('VER GALERÍA','nubay') ?></a>
+                    <a class="btn__gallery btn btn-outline-primary d-lg-none mb-5" data-gallery="gallery_<?php echo $rand; ?>"><?php _e('VER GALERÍA','nubay') ?></a>
                 <?php endif; ?>
 				<?php include( TEMPLATEPATH . '/template-parts/modules/commons/module-content.php'); ?>
 			</div>

@@ -1,4 +1,5 @@
-.container-fluid + .icons {
+.container-fluid + .icons,
+.container-fluid + .icons + .icons {
     padding-top: 7rem;
     @media ( min-width: 768px  ) { padding-top: 10rem ; }
     @media ( min-width: 992px  ) { padding-top: 12rem ; }

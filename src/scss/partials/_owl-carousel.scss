@@ -13,21 +13,33 @@
         overflow: hidden;
         text-indent: -999px;
         outline: none;
-        width: 13px;
-        height: 34px;
-        @media ( min-width: 992px ) {
-            width: 25px;
-            height: 64px;
+        width: 9px;
+        height: 24px;
+        @media ( min-width: 768px ) {
+            width: 12px;
+            height: 31px;
         }
         &.owl-prev {
-            left: 30px;
+            left: 2.5rem;
             background-image: url(../img/arrow_left.svg) !important;
             background-size: cover !important;
+            @media ( min-width: 768px  ) {
+                left: 4rem;
+            }
+            @media ( min-width: 1200px  ) {
+                left: 7rem;
+            }
         }
         &.owl-next {
-            right: 30px;
+            right: 2.5rem;
             background-image: url(../img/arrow_right.svg) !important;
             background-size: cover !important;
+            @media ( min-width: 768px  ) {
+                right: 4rem;
+            }
+            @media ( min-width: 1200px  ) {
+                right: 7rem;
+            }
         }
     }
 

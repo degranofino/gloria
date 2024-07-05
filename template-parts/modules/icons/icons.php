@@ -1,4 +1,5 @@
 <?php $icons = get_sub_field('icons'); ?>
+<?php $icons_mobile = get_sub_field('icons_mobile'); ?>
 
 <div class="section_wrap">
 

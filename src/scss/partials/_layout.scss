@@ -104,7 +104,6 @@ header {
     align-items: center;
     transition: all .3s;
     padding: 2.5rem;
-    padding-bottom: 2rem !important;
     @media ( min-width: 768px  ) { padding: 4rem; }
     @media ( min-width: 1200px  ) { padding: 7rem; }
 
@@ -165,9 +164,10 @@ header {
 
 // SHRINK FUNCTIONS
 .shrink header {
-    padding: 1.5rem 2.5rem;
-    @media ( min-width: 768px  ) { padding: 2.5rem 4rem; }
-    @media ( min-width: 1200px  ) { padding: 4rem 7rem; }
+    background-color: $color_secondary;
+    padding: 1.2rem 2.5rem;
+    @media ( min-width: 768px  ) { padding: 2rem 4rem; }
+    @media ( min-width: 1200px  ) { padding: 2rem 7rem; }
     &::before {
         // opacity: 1;
     }

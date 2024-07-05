@@ -48,27 +48,36 @@
 
 // CONTROLES - ZOOM
 .gm-bundled-control {
-    width: 30px; height: 60px;
+
+    width: 30px;
+    height: 60px;
     z-index: 1000;
-    top: 8rem !important;
-    left: 1rem !important;
-    @media ( min-width: 992px ) { width: 50px; height: 100px; }
+    top: unset !important;
+    left: unset !important;
+    bottom: 3rem !important;
+    right: 2.5rem !important;
 
     @media ( min-width: 768px ) {
-        top: initial !important;
-        left: 3rem !important;
         bottom: 3rem !important;
-    }
+        right: 4rem !important;
+    }    
 
     @media ( min-width: 992px ) {
+        width: 50px;
+        height: 100px; 
         bottom: 4rem !important;
     }
+
+    @media ( min-width: 1200px ) {
+        right: 7rem !important;
+    }    
 
     > .gmnoprint > div {
         background: transparent !important;
         box-shadow: none !important;
         div { display: none; }
         button {
+            outline: none;
             border: 0 !important;
             margin: 0 0 10px !important;
             transition: all .3s;

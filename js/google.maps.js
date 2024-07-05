@@ -251,7 +251,7 @@
             streetViewControl: false,
             zoomControl: true,
             zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_TOP
+                position: google.maps.ControlPosition.RIGHT_BOTTOM
             },
             mapTypeControl: false,
             scrollwheel: false,
@@ -447,7 +447,7 @@
             console.log('1 marker');
             // set center of map
             map.setCenter(bounds.getCenter());
-            map.setZoom(16);
+            map.setZoom(15);
         }
         else {
             console.log('mas marker');
