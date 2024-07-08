@@ -85,7 +85,7 @@
                 "elementType": "labels",
                 "stylers": [
                     {
-                        "visibility": "off"
+                        "visibility": "on"
                     }
                 ]
             },
@@ -133,10 +133,28 @@
             },
             {
                 "featureType": "poi.park",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#636b3f"
+                    },
+                    {
+                        "lightness": "70"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
                 "elementType": "labels",
                 "stylers": [
                     {
-                        "visibility": "off"
+                        "visibility": "on"
+                    },
+                    {
+                        "weight": "0.01"
                     }
                 ]
             },

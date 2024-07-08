@@ -1,5 +1,5 @@
 <?php /* Template name: Thank you */ ?>
-<?php get_header('thankyou'); ?>
+<?php get_header(''); ?>
 
 <?php
 	$titulo = get_field('titulo'); 

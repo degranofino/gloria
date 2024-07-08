@@ -40,7 +40,7 @@
 }
 @media (min-width: 1600px) {
   .fuente_regular, p, body {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -1669,25 +1669,25 @@ textarea span, .input__label span {
 .module__banner .banner__title {
   font-family: "ABC Arizona Flare", sans-serif;
   color: #E8DCC8;
-  font-size: 7.2rem;
+  font-size: 6.5rem;
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .module__banner .banner__title {
-    font-size: 8rem;
+    font-size: 7rem;
     width: 50%;
     margin-bottom: 25px;
   }
 }
 @media (min-width: 1200px) {
   .module__banner .banner__title {
-    font-size: 10rem;
+    font-size: 8rem;
     margin-bottom: 30px;
   }
 }
 @media (min-width: 1600px) {
   .module__banner .banner__title {
-    font-size: 12rem;
+    font-size: 10rem;
     margin-bottom: 40px;
   }
 }
@@ -1697,12 +1697,12 @@ textarea span, .input__label span {
 }
 @media (min-width: 768px) {
   .module__banner .banner__content p {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 1600px) {
   .module__banner .banner__content p {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -2220,23 +2220,23 @@ textarea span, .input__label span {
 }
 @media (min-width: 768px) {
   .module__title {
-    font-size: 5rem;
+    font-size: 4.2rem;
   }
 }
 @media (min-width: 992px) {
   .module__title {
-    font-size: 6rem;
+    font-size: 5rem;
     margin-bottom: 4rem;
   }
 }
 @media (min-width: 1200px) {
   .module__title {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 }
 @media (min-width: 1600px) {
   .module__title {
-    font-size: 8rem;
+    font-size: 7rem;
   }
 }
 .module__title span span {
@@ -2251,7 +2251,7 @@ textarea span, .input__label span {
 }
 @media (min-width: 768px) {
   .module__subtitle {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 992px) {
@@ -2261,7 +2261,7 @@ textarea span, .input__label span {
 }
 @media (min-width: 1200px) {
   .module__subtitle {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -2281,7 +2281,7 @@ textarea span, .input__label span {
 }
 @media (min-width: 768px) {
   .module__precontent p {
-    font-size: 2.6rem !important;
+    font-size: 2.4rem !important;
   }
 }
 
@@ -2688,6 +2688,16 @@ textarea span, .input__label span {
 /**************************************************************************/
 /**************************************************************************/
 /**************************************************************************/
+.page-template-page-thankyou footer {
+  display: none;
+}
+.page-template-page-thankyou .navbar-brand path {
+  fill: #fff;
+}
+.page-template-page-thankyou header .btn {
+  display: none;
+}
+
 .thankyou {
   position: absolute;
   width: 100%;
@@ -2696,6 +2706,9 @@ textarea span, .input__label span {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.thankyou p, .thankyou .thankyou__title {
+  color: #fff;
 }
 .thankyou:before {
   position: absolute;
@@ -2710,17 +2723,33 @@ textarea span, .input__label span {
 }
 .thankyou .thank_brand {
   margin-bottom: 5rem;
-  width: 200px;
+  width: 80%;
 }
 @media (min-width: 992px) {
   .thankyou .thank_brand {
     margin-bottom: 10rem;
-    width: 300px;
+    width: 70%;
   }
 }
 .thankyou .thankyou__title {
-  font-size: 4rem;
+  font-size: 3.6rem;
+  line-height: 1.2em;
   margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .thankyou .thankyou__title {
+    font-size: 4.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .thankyou .thankyou__title {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .thankyou .thankyou__title {
+    font-size: 6rem;
+  }
 }
 
 /**************************************************************************/
