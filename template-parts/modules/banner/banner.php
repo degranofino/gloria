@@ -23,13 +23,31 @@
 </div>
 
 <!-- CARRUSEL OWL -->
-<div class="owl-carousel">
-	<?php $m = 1; foreach ($media['gallery'] as $image) { ?>
-		<div class="item" data-position="<?php echo $m; ?>">
-			<img src="<?php echo $image['url']; ?>" >
-		</div>
-	<?php $m++; }  ?>
-</div>
+<?php if(!empty($media['gallery_mobile'])): ?>
+	<div class="owl-carousel d-none d-lg-block">
+		<?php $m = 1; foreach ($media['gallery'] as $image) { ?>
+			<div class="item" data-position="<?php echo $m; ?>">
+				<img src="<?php echo $image['url']; ?>" >
+			</div>
+		<?php $m++; }  ?>
+	</div>
+	<div class="owl-carousel d-lg-none">
+		<?php $m = 1; foreach ($media['gallery_mobile'] as $image) { ?>
+			<div class="item" data-position="<?php echo $m; ?>">
+				<img src="<?php echo $image['url']; ?>" >
+			</div>
+		<?php $m++; }  ?>
+	</div>
+<?php else: ?>
+	<div class="owl-carousel">
+		<?php $m = 1; foreach ($media['gallery'] as $image) { ?>
+			<div class="item" data-position="<?php echo $m; ?>">
+				<img src="<?php echo $image['url']; ?>" >
+			</div>
+		<?php $m++; }  ?>
+	</div>
+
+<?php endif; ?>
 
 <!-- CARRUSEL NAVIGATION -->
 <?php /*

@@ -1590,6 +1590,11 @@ textarea span, .input__label span {
   animation: slideShow 24s linear infinite 0s;
 }
 
+.module__banner img {
+  -o-object-position: center top !important;
+     object-position: center top !important;
+}
+
 @keyframes slideShow {
   0% {
     transform: scale(1);
@@ -1676,19 +1681,19 @@ textarea span, .input__label span {
   .module__banner .banner__title {
     font-size: 7rem;
     width: 50%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 1200px) {
   .module__banner .banner__title {
     font-size: 8rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 1600px) {
   .module__banner .banner__title {
     font-size: 10rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 .module__banner .banner__content p {
@@ -1709,7 +1714,7 @@ textarea span, .input__label span {
 .carrusel_scroll {
   position: absolute;
   bottom: 0;
-  left: 4rem;
+  left: 4.5rem;
   z-index: 3000;
   display: flex;
   align-items: center;
@@ -1732,6 +1737,7 @@ textarea span, .input__label span {
 @media (min-width: 1200px) {
   .carrusel_scroll {
     font-size: 16px;
+    left: 9.5rem;
   }
 }
 .carrusel_scroll .c-text {
